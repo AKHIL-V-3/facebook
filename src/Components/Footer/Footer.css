@@ -1,0 +1,43 @@
+.Footer{
+    width: 100%;
+    background-color: white;
+}
+.Footer__lang{
+    position: absolute;
+    left: 15%;
+}
+
+
+.Footer__lang > h4 > span{
+    font-size: small;
+    font-weight: 300;
+    cursor: pointer;
+    margin-right: 10px;
+    font-family:SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+    
+}
+.Footer__lang > h4 > span:hover {
+    text-decoration: underline;
+}
+.line-2{
+    border-bottom:1px solid #1c1e21;
+    width: 1050px;
+    
+}
+.span > h4{
+     line-height: 1.5rem;
+
+}
+.span >h4 > span{
+    font-size: 0.8rem;
+    font-weight: 400;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    cursor: pointer;
+    margin-right: 25px;
+    font-family:SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+
+}
+.span > h4 > span:hover{
+    text-decoration: underline;
+}
