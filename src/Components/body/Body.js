@@ -1,6 +1,27 @@
 import React from 'react'
 import './Body.css'
+import { useRef } from 'react'
+import { auth } from '../../Firebase'
 function Body() {
+const emailRef=useRef(null)
+const PasswordRef=useRef(null)
+
+const  Register = (e)=>{
+  e.preventDefault()
+  auth.createUserWithEmailAndPassword(
+    emailRef.current.value,
+    PasswordRef.current.value
+
+  ).then((userAuth)=>{
+    console.log(userAuth)
+  }).catch((error)=>{
+    alert(error.message)
+  })
+}
+
+
+
+
   return (
     <div className='Body'>
         <div className="Body__left">
@@ -9,12 +30,14 @@ function Body() {
         </div>
             <div className="Body__contents">
                 <form >
-                <input type="email or phone number" placeholder='Email address or phone number' />
-                <input type="Password" placeholder='Password' />
+                <input ref={emailRef} type="email or phone number" placeholder='Email address or phone number' />
+                <input ref={PasswordRef} type="Password" placeholder='Password' />
                 <button className='Body__LogIn'>Log In</button>
                 <h4>forgotten password?</h4>
                 <div className='line'></div>
-                <button className='Button__createNew'>Create New Account</button>
+                <button 
+                onClick={Register} 
+                className='Button__createNew'>Create New Account</button>
                 <div className='none'></div>
               </form>
                
